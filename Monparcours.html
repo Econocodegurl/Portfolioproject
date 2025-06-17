@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <metacharset = "UTF-8"
+<title>Mon parcours</title>
+<meta name = "author" content = Rajoelina Rohy>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f0e6;
+      padding: 20px;
+    }
+    .btn {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #d2b48c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #info {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #5c4033;
+    }
+	.logo {
+	width: 120px;
+	height: auto;
+	margin-bottom: 20px;
+	}
+  </style>
+</head>
+<body>
+
+  <h1>Mon Parcours,mon histoire</h1>
+  <p>Je suis née à Madagascar, dans l'Est su pays à Tamatave. J'ai grandi dans la ville de Fianarantsoa, avec mes parents et 
+  ma petite-frère. Depuis toujours, mes week-ends ont été rythmés. A côté de mon parcours scolaire, j'ai pratiqué plusieurs types de sport,
+  appris à jouer de la musique et pris des cours de langue. Mon cursus scolaire s'est achevé à Antananarivo, après l'obtention des mes deux
+  baccalauréats.<p>
+  <p>Je poursuis actuellement deux formations en parallèle :</p>
+
+  <ul>
+    <li>Licence 2 en Économie – Université Catholique de Madagascar (UCM)</li>
+    <li>Master 2 en Droit Public – CNTEMAD</li>
+  </ul>
+
+  <p>Je travaille donc à l’UCM et à la CNTEMAD.</p>
+
+  <button class="btn" onclick="afficherInfo('ucm')">En savoir plus sur UCM</button><br><img src="image/UCM.jpg" alt="Logo UCM" class="logo">
+  <button class="btn" onclick="afficherInfo('cntemad')">En savoir plus sur CNTEMAD</button><br><img src="image/CNTEMAD.jpg" alt="Logo CNTEMAD" class="logo">
+
+  <div id="info"></div>
+
+  <script>
+    function afficherInfo(ecole) {
+      const info = document.getElementById('info');
+      if (ecole === 'ucm') {
+        info.innerHTML = "À l’UCM, j’assure des tâches académiques tout en poursuivant mes études en économie.Pour plus d'informations va voir le <br><a href=\"https://www.ucm.mg\" target=\"_blank\">site officiel de l'UCM</a>";
+      } else if (ecole === 'cntemad') {
+        info.innerHTML = "À la CNTEMAD, je suis en Master 2 de Droit Public, avec une approche axée sur la gouvernance.Pour plus d'information va voir le <br><a href=\"https://www.cntemad.mg\" target=\"_blank\">site officiel de la CNTEMAD</a>";
+      }
+    }
+  </script>
+
+</body>
+</html>

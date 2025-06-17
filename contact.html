@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <metacharset = "UTF-8"
+<title>Contact</title>
+<meta name = "author" content = Rajoelina Rohy>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f0e6; /* beige clair */
+      color: #5a3e1b; /* marron */
+      padding: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: #fff8f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #d7c8b0;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #d7c8b0;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #a67c00;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+You sent
+button:hover {
+      background-color: #8c6500;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Contacte-moi</h2>
+  <form id="contactForm" onsubmit="return validateForm()">
+    <label for="name">Ton nom :</label>
+    <input type="text" id="name" name="name" placeholder="Nom et Prénom(s)" />
+    <div id="errorName" class="error"></div>
+
+    <label for="email">Ton adresse Email :</label>
+    <input type="email" id="email" name="email" placeholder="Adresse email" />
+    <div id="errorEmail" class="error"></div>
+
+    <label for="message">Ton message :</label>
+    <textarea id="message" name="message" rows="5" placeholder="Message"></textarea>
+    <div id="errorMessage" class="error"></div>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      let valid = true;
+
+      // Reset erreurs
+      document.getElementById('errorName').innerText = '';
+      document.getElementById('errorEmail').innerText = '';
+      document.getElementById('errorMessage').innerText = '';
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+You sent
+if (name === '') {
+        document.getElementById('errorName').innerText = 'Veuillez entrer votre nom.';
+        valid = false;
+      }
+
+      if (email === '') {
+        document.getElementById('errorEmail').innerText = 'Veuillez entrer votre email.';
+        valid = false;
+      } else if (!email.includes('@') || !email.includes('.')) {
+        document.getElementById('errorEmail').innerText = 'Veuillez entrer un email valide.';
+        valid = false;
+      }
+
+      if (message === '') {
+        document.getElementById('errorMessage').innerText = 'Veuillez écrire un message.';
+        valid = false;
+      }
+
+      return valid; // si false, formulaire ne sera pas soumis
+    }
+  </script>
+</body>
+</html>
